@@ -1,0 +1,30 @@
+{ 
+  "locations": [ 
+    { 
+      "name": "Location A", 
+      "interactable_objects": [ 
+        { 
+          "position_x": -500, 
+          "position_y": 200, 
+          "name": "Door", 
+          "default_sprite": "door_closed", 
+          "interact_sprite": "door_open", 
+          "interaction": "Location Warp - Location B"
+          }
+        ]
+      }, 
+    { 
+      "name": "Location B", 
+      "interactable_objects": [ 
+        { 
+          "position_x": 500, 
+          "position_y": -200, 
+          "name": "Door", 
+          "default_sprite": "door_closed", 
+          "interact_sprite": "door_open", 
+          "interaction": "Location Warp - Location A"
+          }
+        ]
+      }
+    ]
+  }
