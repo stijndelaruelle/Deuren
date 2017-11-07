@@ -12,6 +12,7 @@ public class LocationData : ScriptableObject
     public string DisplayName
     {
         get { return m_DisplayName; }
+        set { m_DisplayName = value; }
     }
 
     [SerializeField]

@@ -1,9 +1,8 @@
 ﻿using SimpleJSON;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
+
+public delegate void LocationDelegate(LocationData location);
 
 public class LocationManager : MonoBehaviour
 {
@@ -12,19 +11,15 @@ public class LocationManager : MonoBehaviour
     private LocationData m_StartLocation;
 
     [SerializeField]
-    private string m_RootPath;
-
-    [SerializeField]
     private List<LocationData> m_Locations;
-
-    //Temp, will change to event
-    [SerializeField]
-    private Text m_LocationText;
 
     //Pool, no need to generalize just yet
     [SerializeField]
     private InteractableObject m_InteractableObjectPrefab;
     private List<InteractableObject> m_InteractableObjects;
+
+    public event LocationDelegate LoadLocationEvent;
+    public event LocationDelegate NameLocationEvent;
 
     private void Awake()
     {
@@ -38,7 +33,13 @@ public class LocationManager : MonoBehaviour
 
     public void LoadLocation(LocationData locationData)
     {
-        m_LocationText.text = locationData.DisplayName;
+        if (locationData.DisplayName == "")
+        {
+            if (NameLocationEvent != null)
+                NameLocationEvent(locationData);
+
+            return;
+        }
 
         for (int i = 0; i < locationData.InteractableObjects.Count; ++i)
         {
@@ -60,6 +61,9 @@ public class LocationManager : MonoBehaviour
 
             interactableObject.Initialize(this, tuple);
         }
+
+        if (LoadLocationEvent != null)
+            LoadLocationEvent(locationData);
     }
 
 
