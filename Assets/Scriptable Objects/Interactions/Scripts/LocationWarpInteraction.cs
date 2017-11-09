@@ -14,6 +14,9 @@ public class LocationWarpInteraction : Interaction
         if (m_Location == null)
         {
             m_LocationManager = locationManager;
+
+            //Make sure we are unsubscribed before subscribing again
+            m_LocationManager.LoadLocationEvent -= OnLoadLocation;
             m_LocationManager.LoadLocationEvent += OnLoadLocation;
         }
 
