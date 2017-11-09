@@ -11,20 +11,27 @@ public class LocationManager : MonoBehaviour
     private LocationData m_StartLocation;
 
     [SerializeField]
+    private ObjectPool m_InteractableObjectPool;
+
+    //Visuals
+    [SerializeField]
+    private ColorAnimator m_Fader;
+
+    //Don't know where else to store it
+    [SerializeField]
     private List<LocationData> m_Locations;
     private LocationData m_CurrentLocation;
 
-    //Pool, no need to generalize just yet
-    [SerializeField]
-    private ObjectPool m_InteractableObjectPool;
-
     public event LocationDelegate CreateLocationEvent;
+    public event LocationDelegate StartLoadLocationEvent;
+    public event LocationDelegate EndLoadLocationEvent;
     public event LocationDelegate LoadLocationEvent;
     public event LocationDelegate NameLocationEvent;
 
     private void Start()
     {
-        LoadLocation(m_StartLocation);
+        m_CurrentLocation = m_StartLocation;
+        LoadLocationInternal();
     }
 
     //Locations
@@ -65,22 +72,39 @@ public class LocationManager : MonoBehaviour
             return;
         }
 
+        m_CurrentLocation = locationData;
+
+        if (StartLoadLocationEvent != null)
+            StartLoadLocationEvent(locationData);
+
+        //Fade it
+        m_Fader.FadeIn(LoadLocationInternal);
+    }
+
+    private void LoadLocationInternal()
+    {
         //Deactivate all the old objects
         m_InteractableObjectPool.DeactivateAll();
 
         //Activate the new objects
-        for (int i = 0; i < locationData.InteractableObjects.Count; ++i)
+        for (int i = 0; i < m_CurrentLocation.InteractableObjects.Count; ++i)
         {
-            InteractableObjectAndTransformTuple tuple = locationData.InteractableObjects[i];
+            InteractableObjectAndTransformTuple tuple = m_CurrentLocation.InteractableObjects[i];
             LoadInteractableObject(tuple);
         }
 
-        m_CurrentLocation = locationData;
-
         if (LoadLocationEvent != null)
-            LoadLocationEvent(locationData);
+            LoadLocationEvent(m_CurrentLocation);
+
+        //Fade out again
+        m_Fader.FadeOut(OnFadeOutComplete);
     }
 
+    private void OnFadeOutComplete()
+    {
+        if (EndLoadLocationEvent != null)
+            EndLoadLocationEvent(m_CurrentLocation);
+    }
 
     //Interactable objects
     public void LoadInteractableObject(Vector2 position, InteractableObjectData data)

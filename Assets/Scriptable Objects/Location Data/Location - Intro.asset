@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da1f4297af25de94ea3b8fae657f0964, type: 3}
-  m_Name: Location B
+  m_Name: Location - Intro
   m_EditorClassIdentifier: 
-  m_DisplayName: 
+  m_DisplayName: '?'
   m_InteractableObjects:
-  - m_Position: {x: 500, y: -200}
-    m_Data: {fileID: 11400000, guid: 54eb1e585fd8fb4419ca36f5f5130916, type: 2}
+  - m_Position: {x: 0, y: 0}
+    m_Data: {fileID: 11400000, guid: ad2145acf5d8e3f498469e2e96e12a8a, type: 2}
