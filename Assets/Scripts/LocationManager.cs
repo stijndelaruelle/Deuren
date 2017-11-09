@@ -23,9 +23,11 @@ public class LocationManager : MonoBehaviour
     private LocationData m_CurrentLocation;
 
     public event LocationDelegate CreateLocationEvent;
+
     public event LocationDelegate StartLoadLocationEvent;
-    public event LocationDelegate EndLoadLocationEvent;
     public event LocationDelegate LoadLocationEvent;
+    public event LocationDelegate EndLoadLocationEvent;
+    
     public event LocationDelegate NameLocationEvent;
 
     private void Start()

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f4297af25de94ea3b8fae657f0964, type: 3}
   m_Name: Location - Intro 2
   m_EditorClassIdentifier: 
-  m_DisplayName: World
+  m_DisplayName: Huis
   m_InteractableObjects:
   - m_Position: {x: 0, y: 0}
     m_Data: {fileID: 11400000, guid: 54eb1e585fd8fb4419ca36f5f5130916, type: 2}
