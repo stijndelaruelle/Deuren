@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DisplayName: Location A
   m_InteractableObjects:
-  - m_Position: {x: -500, y: 200}
+  - m_Position: {x: -500, y: 100}
     m_Data: {fileID: 11400000, guid: ad2145acf5d8e3f498469e2e96e12a8a, type: 2}

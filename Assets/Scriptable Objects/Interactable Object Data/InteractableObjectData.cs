@@ -33,6 +33,7 @@ public class InteractableObjectData : ScriptableObject
     public Interaction Interaction
     {
         get { return m_Interaction; }
+        set { m_Interaction = value; }
     }
 
     public void InitializeButton(Button button)

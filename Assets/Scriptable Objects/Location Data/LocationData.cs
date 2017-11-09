@@ -22,6 +22,23 @@ public class LocationData : ScriptableObject
         get { return m_InteractableObjects; }
     }
 
+    private void Awake()
+    {
+        if (m_InteractableObjects == null)
+            m_InteractableObjects = new List<InteractableObjectAndTransformTuple>();
+    }
+
+    public void AddInteractableObject(Vector2 position, InteractableObjectData data)
+    {
+        AddInteractableObject(new InteractableObjectAndTransformTuple(position, data));
+    }
+
+    public void AddInteractableObject(InteractableObjectAndTransformTuple tuple)
+    {
+        m_InteractableObjects.Add(tuple);
+    }
+
+
     public void Serialize(JSONArray rootArray)
     {
         JSONClass jsonClass = new JSONClass();
@@ -61,6 +78,12 @@ public struct InteractableObjectAndTransformTuple
     public InteractableObjectData Data
     {
         get { return m_Data; }
+    }
+
+    public InteractableObjectAndTransformTuple(Vector2 position, InteractableObjectData data)
+    {
+        m_Position = position;
+        m_Data = data;
     }
 
     public void Serialize(JSONArray rootArray)
