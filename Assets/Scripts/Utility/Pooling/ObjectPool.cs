@@ -188,6 +188,28 @@ public class ObjectPool : MonoBehaviour
         return null;
     }
 
+    public List<PoolableObject> GetAllObjects()
+    {
+        return m_PooledObjects;
+    }
+
+    public List<T> GetAllObjects<T>() where T: PoolableObject
+    {
+        List<T> newList = new List<T>();
+
+        foreach (PoolableObject obj in m_PooledObjects)
+        {
+            T castedObj = (T)obj;
+
+            if (castedObj != null)
+            {
+                newList.Add(castedObj);
+            }
+        }
+
+        return newList;
+    }
+
     public void DeactivateAll()
     {
         for (int i = 0; i < m_PooledObjects.Count; ++i)

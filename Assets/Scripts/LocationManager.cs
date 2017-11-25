@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void LocationDelegate(LocationData location);
+public delegate void InteractableObjectDelegate(InteractableObject interactableObject);
 
 public class LocationManager : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class LocationManager : MonoBehaviour
     public event LocationDelegate EndLoadLocationEvent;
     
     public event LocationDelegate NameLocationEvent;
+
+    public event InteractableObjectDelegate LoadInteractableObjectEvent;
 
     private void Start()
     {
@@ -116,6 +119,9 @@ public class LocationManager : MonoBehaviour
 
         if (interactableObject == null)
             return;
+
+        if (LoadInteractableObjectEvent != null)
+            LoadInteractableObjectEvent(interactableObject);
 
         interactableObject.Initialize(this, position, data);
     }
