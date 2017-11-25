@@ -11,6 +11,9 @@ public class TooltipInteraction : Interaction
     [SerializeField]
     private float m_Duration;
 
+    [SerializeField]
+    private AudioClip m_AudioClip;
+
     public override bool Interact(InteractableObject thisObject, InteractableObject otherObject)
     {
         string display = "";
@@ -22,6 +25,7 @@ public class TooltipInteraction : Interaction
 
         //Debug.Log(display);
         thisObject.SetTooltip(display, m_Duration);
+        thisObject.PlaySound(m_AudioClip);
 
         return false;
     }

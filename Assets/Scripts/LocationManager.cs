@@ -59,7 +59,7 @@ public class LocationManager : MonoBehaviour
         //Check if there is already a location with this name
         foreach(LocationData data in m_Locations)
         {
-            if (data.DisplayName == name)
+            if (data.DisplayName.ToLower() == name.ToLower())
             {
                 return data;
             }

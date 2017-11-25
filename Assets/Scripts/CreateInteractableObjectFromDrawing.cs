@@ -12,6 +12,9 @@ public class CreateInteractableObjectFromDrawing : MonoBehaviour
     private DrawDetector m_DrawDetector;
 
     [SerializeField]
+    private AudioSource m_AudioSource;
+
+    [SerializeField]
     private InteractableObjectData m_BaseInteractableObjectData;
 
     [SerializeField]
@@ -36,6 +39,8 @@ public class CreateInteractableObjectFromDrawing : MonoBehaviour
 
                 Vector2 localPosition = result.gestureData.GetCenter() - (Vector2)m_LocationManager.InteractableObjectRoot.position;
                 m_LocationManager.CreateInteractableObject(localPosition, newData);
+
+                m_AudioSource.Play();
 
                 return;
             }

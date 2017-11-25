@@ -7,6 +7,9 @@ public class LocationWarpInteraction : Interaction
     private LocationData m_Location;
     private LocationManager m_LocationManager;
 
+    [SerializeField]
+    private AudioClip m_AudioClip;
+
     public override bool Interact(InteractableObject thisObject, InteractableObject otherObject)
     {
         //If we have no location data, there will be a new one created/found when we load
@@ -21,6 +24,7 @@ public class LocationWarpInteraction : Interaction
         }
 
         thisObject.LocationManager.LoadLocation(m_Location);
+        thisObject.PlaySound(m_AudioClip);
 
         return true;
     }

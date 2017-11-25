@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: Location Warp - Intro 4
   m_EditorClassIdentifier: 
   m_Location: {fileID: 11400000, guid: e7931e0053a8dbe42a9f44be76111549, type: 2}
+  m_AudioClip: {fileID: 8300000, guid: b51ec386b27ff434db7acce64b0b2882, type: 3}

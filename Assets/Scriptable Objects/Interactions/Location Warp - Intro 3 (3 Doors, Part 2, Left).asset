@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: Location Warp - Intro 3 (3 Doors, Part 2, Left)
   m_EditorClassIdentifier: 
   m_Location: {fileID: 11400000, guid: 2811d9671b1cbe94b8da00d82f0f2429, type: 2}
+  m_AudioClip: {fileID: 8300000, guid: b51ec386b27ff434db7acce64b0b2882, type: 3}

@@ -9,11 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f391e47908a4d2b418d141b900583095, type: 3}
-  m_Name: Item - Hoera
+  m_Name: Text - The End
   m_EditorClassIdentifier: 
-  m_DisplayName: Hoera
+  m_DisplayName: 'The end. A cold and desolate place.
+
+
+    Why would anyone come here when there is so much to live for?'
   m_DefaultSprite: {fileID: 0}
   m_InteractSprite: {fileID: 0}
   m_Interaction: {fileID: 0}
   m_DropInteraction: {fileID: 0}
-  m_AllowDragging: 1
+  m_AllowDragging: 0

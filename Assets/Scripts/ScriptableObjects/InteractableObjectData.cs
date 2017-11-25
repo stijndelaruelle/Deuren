@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Interactable Object", menuName = "Custom/Interactable Object Data")]
 public class InteractableObjectData : ScriptableObject
 {
+    [Multiline]
     [SerializeField]
     private string m_DisplayName;
     public string DisplayName

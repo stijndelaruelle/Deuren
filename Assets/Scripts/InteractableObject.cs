@@ -20,6 +20,9 @@ public class InteractableObject : PoolableObject, IPointerDownHandler, IBeginDra
     [SerializeField]
     private Text m_Text;
 
+    [SerializeField]
+    private AudioSource m_AudioSource;
+
     private LocationManager m_LocationManager;
     public LocationManager LocationManager
     {
@@ -77,6 +80,13 @@ public class InteractableObject : PoolableObject, IPointerDownHandler, IBeginDra
         if (TooltipEvent != null)
             TooltipEvent(text, duration, new Vector2(m_RectTransform.position.x, m_RectTransform.position.y - (m_RectTransform.sizeDelta.y * 0.5f)));
     }
+
+    public void PlaySound(AudioClip audioClip)
+    {
+        m_AudioSource.clip = audioClip;
+        m_AudioSource.Play();
+    }
+
 
     //Interactions
     public void Interact()

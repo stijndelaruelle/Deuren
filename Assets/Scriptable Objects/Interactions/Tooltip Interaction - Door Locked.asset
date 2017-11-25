@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Text: The {0} is locked.
   m_Duration: 1
+  m_AudioClip: {fileID: 8300000, guid: 9a6f9a0303dbbc94aa11c3e7d51bb436, type: 3}

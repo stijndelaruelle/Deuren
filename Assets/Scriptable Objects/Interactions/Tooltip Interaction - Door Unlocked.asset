@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbdee9a9e5f03d74c826490b99e0a618, type: 3}
-  m_Name: Tooltip Interaction - Success
+  m_Name: Tooltip Interaction - Door Unlocked
   m_EditorClassIdentifier: 
   m_Text: It worked!
   m_Duration: 1
+  m_AudioClip: {fileID: 8300000, guid: ab406d73d94800c4b8ff2e46274ebe4a, type: 3}
