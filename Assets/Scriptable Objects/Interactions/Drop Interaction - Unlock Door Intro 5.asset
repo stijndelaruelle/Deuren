@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e8bfa261df98841927e6705f7634b4, type: 3}
+  m_Name: Drop Interaction - Unlock Door Intro 5
+  m_EditorClassIdentifier: 
+  m_RequiredName: key
+  m_SuccessInteractions:
+  - {fileID: 11400000, guid: 2020615ceb516c843bcbc291853d250c, type: 2}
+  - {fileID: 11400000, guid: 3a037deccdc3d674a96555befe0acfd7, type: 2}
+  - {fileID: 11400000, guid: 42bddb5b8c1f5ac4aa303d5eabc280f8, type: 2}
+  m_FailInteractions:
+  - {fileID: 11400000, guid: 9081fd98fc1acc841b1836b0a1f314e3, type: 2}
+  - {fileID: 11400000, guid: 42bddb5b8c1f5ac4aa303d5eabc280f8, type: 2}

@@ -8,6 +8,9 @@ public class TooltipInteraction : Interaction
     [SerializeField]
     private string m_Text;
 
+    [SerializeField]
+    private float m_Duration;
+
     public override bool Interact(InteractableObject thisObject, InteractableObject otherObject)
     {
         string display = "";
@@ -18,7 +21,7 @@ public class TooltipInteraction : Interaction
             display = string.Format(m_Text, thisObject.Data.DisplayName, otherObject.Data.DisplayName);
 
         //Debug.Log(display);
-        thisObject.SetTooltip(display);
+        thisObject.SetTooltip(display, m_Duration);
 
         return false;
     }

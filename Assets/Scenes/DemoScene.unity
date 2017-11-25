@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Speed: 1
   m_Gradient:
     serializedVersion: 2
-    key0: {r: 0.11505191, g: 0.19156428, b: 0.5588235, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 0}
     key1: {r: 0.04411763, g: 0.04411763, b: 0.04411763, a: 1}
     key2: {r: 0.04411763, g: 0.04411763, b: 0.04411763, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  m_StartPoint: 0
+  m_StartPoint: 1
 --- !u!222 &446758906
 CanvasRenderer:
   m_ObjectHideFlags: 0

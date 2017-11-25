@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdee9a9e5f03d74c826490b99e0a618, type: 3}
-  m_Name: Tooltip Interaction - Not Affected
+  m_Script: {fileID: 11500000, guid: 90cc6ca4e5c677c4ca03b17a526a37f9, type: 3}
+  m_Name: Change Data Interaction - Unlock Door Intro 5
   m_EditorClassIdentifier: 
-  m_Text: The {0} and {1} are not friends.
-  m_Duration: 1
+  m_NewDataThis: {fileID: 11400000, guid: aa3782a38de2dab458bf483a9152cb34, type: 2}
+  m_NewDataOther: {fileID: 0}

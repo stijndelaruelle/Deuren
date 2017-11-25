@@ -14,8 +14,8 @@ MonoBehaviour:
   m_DisplayName: '?'
   m_InteractableObjects:
   - m_Position: {x: -500, y: 0}
-    m_Data: {fileID: 11400000, guid: f777be9eb0939454eb41665e5ead8bc9, type: 2}
+    m_Data: {fileID: 11400000, guid: 7dd80f6bc5a8043458645ae1d8ecb946, type: 2}
   - m_Position: {x: 0, y: 0}
     m_Data: {fileID: 11400000, guid: ca54b1f3c48feb44b8bcd43b8b3e54a0, type: 2}
   - m_Position: {x: 500, y: 0}
-    m_Data: {fileID: 11400000, guid: f777be9eb0939454eb41665e5ead8bc9, type: 2}
+    m_Data: {fileID: 11400000, guid: 7dd80f6bc5a8043458645ae1d8ecb946, type: 2}

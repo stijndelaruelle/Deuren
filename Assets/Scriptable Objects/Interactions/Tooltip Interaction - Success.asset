@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: Tooltip Interaction - Success
   m_EditorClassIdentifier: 
   m_Text: It worked!
+  m_Duration: 1

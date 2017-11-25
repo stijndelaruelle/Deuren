@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdee9a9e5f03d74c826490b99e0a618, type: 3}
   m_Name: Tooltip Interaction - Door Locked
   m_EditorClassIdentifier: 
-  m_Text: This Door is locked
+  m_Text: This door is locked
+  m_Duration: 1

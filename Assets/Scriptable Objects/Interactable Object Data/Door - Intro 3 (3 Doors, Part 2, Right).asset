@@ -15,5 +15,5 @@ MonoBehaviour:
   m_DefaultSprite: {fileID: 21300000, guid: d9129fd86e1c5d147907f9995b80d9da, type: 3}
   m_InteractSprite: {fileID: 21300000, guid: 8694dad1a7252744ab7a16f3766e04d6, type: 3}
   m_Interaction: {fileID: 11400000, guid: be154c333181fd64594926e3e2d60b5a, type: 2}
-  m_DropInteraction: {fileID: 0}
+  m_DropInteraction: {fileID: 11400000, guid: 9081fd98fc1acc841b1836b0a1f314e3, type: 2}
   m_AllowDragging: 0

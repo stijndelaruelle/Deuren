@@ -17,6 +17,16 @@ public class LocationTextUI : MonoBehaviour
     {
         m_LocationManager.StartLoadLocationEvent += OnStartLoadLocation;
         m_LocationManager.LoadLocationEvent += OnLoadLocation;
+
+        //Set position
+        Vector3 newPosition = m_Text.transform.localPosition;
+        newPosition.y = 100.0f;
+        m_Text.transform.localPosition = newPosition;
+
+        //Set scale
+        Vector3 newScale = m_Text.transform.localScale;
+        newScale.x = 0.0f;
+        m_Line.transform.localScale = newScale;
     }
 
     private void OnDestroy()

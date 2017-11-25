@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public delegate void TooltipDelegate(string text, Vector2 position);
+public delegate void TooltipDelegate(string text, float duration, Vector2 position);
 
 [RequireComponent(typeof(RectTransform))]
 public class TooltipTextUI : MonoBehaviour
@@ -21,8 +21,6 @@ public class TooltipTextUI : MonoBehaviour
     [SerializeField]
     private float m_FadeTime;
 
-    [SerializeField]
-    private float m_TooltipTime;
     private Sequence m_CurrentSequence;
 
     private RectTransform m_RectTransform;
@@ -68,7 +66,7 @@ public class TooltipTextUI : MonoBehaviour
     }
 
     //Callbacks from InteractableObjects
-    private void OnTooltip(string text, Vector2 position)
+    private void OnTooltip(string text, float duration, Vector2 position)
     {
         m_Text.text = text;
         m_Text.enabled = true;
@@ -86,11 +84,11 @@ public class TooltipTextUI : MonoBehaviour
         m_CurrentSequence.Insert(0.0f, m_Text.DOFade(1.0f, m_FadeTime));
 
         //Wait
-        m_CurrentSequence.AppendInterval(m_TooltipTime);
+        m_CurrentSequence.AppendInterval(duration);
 
         //Move & fade out
-        m_CurrentSequence.Insert(m_TooltipTime + m_FadeTime, m_RectTransform.DOMoveY(position.y - m_Offset, m_FadeTime));
-        m_CurrentSequence.Insert(m_TooltipTime + m_FadeTime, m_Text.DOFade(0.0f, m_FadeTime));
+        m_CurrentSequence.Insert(duration + m_FadeTime, m_RectTransform.DOMoveY(position.y - m_Offset, m_FadeTime));
+        m_CurrentSequence.Insert(duration + m_FadeTime, m_Text.DOFade(0.0f, m_FadeTime));
 
         //Callback
         m_CurrentSequence.AppendCallback(OnFadeComplete);
@@ -114,10 +112,5 @@ public class TooltipTextUI : MonoBehaviour
         }
 
         m_ListeningObjects.Clear();
-    }
-
-    private void InitFadeSequence()
-    {
-
     }
 }

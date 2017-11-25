@@ -56,6 +56,13 @@ public class InteractableObject : PoolableObject, IPointerDownHandler, IBeginDra
         //Data
         m_Data = data;
 
+        if (m_Data == null)
+        {
+            m_Image.enabled = false;
+            m_Text.enabled = false;
+            return;
+        }
+
         //Use data
         m_Image.sprite = m_Data.DefaultSprite;
         m_Text.text = m_Data.DisplayName;
@@ -65,10 +72,10 @@ public class InteractableObject : PoolableObject, IPointerDownHandler, IBeginDra
         m_Text.enabled = !m_Image.enabled;
     }
 
-    public void SetTooltip(string text)
+    public void SetTooltip(string text, float duration)
     {
         if (TooltipEvent != null)
-            TooltipEvent(text, new Vector2(m_RectTransform.position.x, m_RectTransform.position.y - (m_RectTransform.sizeDelta.y * 0.5f)));
+            TooltipEvent(text, duration, new Vector2(m_RectTransform.position.x, m_RectTransform.position.y - (m_RectTransform.sizeDelta.y * 0.5f)));
     }
 
     //Interactions
