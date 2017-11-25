@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Name: Location - Intro 4
   m_EditorClassIdentifier: 
   m_DisplayName: '?'
+  m_AllowDrawing: 0
   m_InteractableObjects:
   - m_Position: {x: 0, y: 0}
     m_Data: {fileID: 11400000, guid: d00d0b257aca6bd46881dddef8ad2050, type: 2}
-  - m_Position: {x: -90, y: -300}
+  - m_Position: {x: -90, y: -400}
     m_Data: {fileID: 11400000, guid: 494b3e4eed01a264b99a6f3884ef395b, type: 2}
-  - m_Position: {x: 75, y: -300}
+  - m_Position: {x: 75, y: -400}
     m_Data: {fileID: 11400000, guid: 8fc03fa5b4950a742a083e401d0bd618, type: 2}
-  - m_Position: {x: 150, y: -300}
+  - m_Position: {x: 150, y: -400}
     m_Data: {fileID: 11400000, guid: eb1c4e0b8d118084280fa7df2172fc08, type: 2}
-  - m_Position: {x: 200, y: -300}
+  - m_Position: {x: 200, y: -400}
     m_Data: {fileID: 11400000, guid: 5ee0352e9d9c2e1448b6c6e250743f93, type: 2}

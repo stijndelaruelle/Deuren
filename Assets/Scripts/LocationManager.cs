@@ -1,4 +1,5 @@
-﻿using SimpleJSON;
+﻿using GestureRecognizer;
+using SimpleJSON;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,23 @@ public class LocationManager : MonoBehaviour
 
     [SerializeField]
     private ObjectPool m_InteractableObjectPool;
+    public Transform InteractableObjectRoot
+    {
+        get
+        {
+            if (m_InteractableObjectPool != null)
+                return m_InteractableObjectPool.transform;
+            else
+                return null;
+        }
+    }
 
     //Visuals
     [SerializeField]
     private ColorAnimator m_Fader;
+
+    [SerializeField]
+    private DrawDetector m_DrawDetector;
 
     //Don't know where else to store it
     [SerializeField]
@@ -100,6 +114,10 @@ public class LocationManager : MonoBehaviour
 
         if (LoadLocationEvent != null)
             LoadLocationEvent(m_CurrentLocation);
+
+        //Enable / disable drawing
+        if (m_DrawDetector != null)
+            m_DrawDetector.enabled = (m_CurrentLocation.AllowDrawing);
 
         //Fade out again
         m_Fader.FadeOut(OnFadeOutComplete);

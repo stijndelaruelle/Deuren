@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Name: Location - Intro 5
   m_EditorClassIdentifier: 
   m_DisplayName: Void
-  m_InteractableObjects: []
+  m_AllowDrawing: 1
+  m_InteractableObjects:
+  - m_Position: {x: 0, y: 0}
+    m_Data: {fileID: 11400000, guid: 840fc79ada991bd478368d4f3fbd3d51, type: 2}

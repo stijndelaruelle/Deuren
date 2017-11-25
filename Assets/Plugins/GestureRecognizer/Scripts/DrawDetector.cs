@@ -34,8 +34,10 @@ namespace GestureRecognizer {
 		public RemoveStrategy removeStrategy;
 
 		public bool clearNotRecognizedLines;
+        //Added: Stijn
+        public bool clearImmediatly;
 
-		GestureData data = new GestureData();
+        GestureData data = new GestureData();
 
 		[System.Serializable]
 		public class ResultEvent : UnityEvent<RecognitionResult> {}
@@ -127,9 +129,10 @@ namespace GestureRecognizer {
 					lines = data.lines.GetRange (data.lines.Count - size, size)
 				};
 
-				var result = recognizer.Recognize(sizedData);
+				RecognitionResult result = recognizer.Recognize(sizedData);
+                result.gestureData = sizedData;
 
-				if (result.gesture != null && result.score.score >= scoreToAccept) {
+                if (result.gesture != null && result.score.score >= scoreToAccept) {
 					OnRecognize.Invoke (result);
 					if (clearNotRecognizedLines) {
 						data = sizedData;
@@ -140,6 +143,13 @@ namespace GestureRecognizer {
 					OnRecognize.Invoke (RecognitionResult.Empty);
 				}
 			}
+
+            //Added: Stijn
+            if (clearImmediatly)
+            {
+                data.lines.Clear();
+                UpdateLines();
+            }
 		}
 
 	}

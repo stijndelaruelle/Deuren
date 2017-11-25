@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Location - Intro 3 (3 Doors, Part 2, Left)
   m_EditorClassIdentifier: 
   m_DisplayName: '?'
+  m_AllowDrawing: 0
   m_InteractableObjects:
   - m_Position: {x: -500, y: 0}
     m_Data: {fileID: 11400000, guid: ca54b1f3c48feb44b8bcd43b8b3e54a0, type: 2}

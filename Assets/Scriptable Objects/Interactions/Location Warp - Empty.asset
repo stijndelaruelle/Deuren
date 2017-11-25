@@ -8,8 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdee9a9e5f03d74c826490b99e0a618, type: 3}
-  m_Name: Tooltip Interaction - Door Locked
+  m_Script: {fileID: 11500000, guid: 4351d37e70174fe4eb9d85a1ff162fa1, type: 3}
+  m_Name: Location Warp - Empty
   m_EditorClassIdentifier: 
-  m_Text: The {0} is locked.
-  m_Duration: 1
+  m_Location: {fileID: 0}

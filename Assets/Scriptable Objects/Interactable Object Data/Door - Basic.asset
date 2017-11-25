@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f391e47908a4d2b418d141b900583095, type: 3}
-  m_Name: Door - Intro 5 (Unlocked)
+  m_Name: Door - Basic
   m_EditorClassIdentifier: 
   m_DisplayName: door
   m_DefaultSprite: {fileID: 21300000, guid: d9129fd86e1c5d147907f9995b80d9da, type: 3}
   m_InteractSprite: {fileID: 21300000, guid: 8694dad1a7252744ab7a16f3766e04d6, type: 3}
-  m_Interaction: {fileID: 11400000, guid: 91aab07c304522146971f9e462d40a44, type: 2}
-  m_DropInteraction: {fileID: 11400000, guid: 1c8151b542de675429a1a74ba92417e4, type: 2}
+  m_Interaction: {fileID: 11400000, guid: 7832953637d490c45933f9c4a8cb173b, type: 2}
+  m_DropInteraction: {fileID: 11400000, guid: 9081fd98fc1acc841b1836b0a1f314e3, type: 2}
   m_AllowDragging: 0

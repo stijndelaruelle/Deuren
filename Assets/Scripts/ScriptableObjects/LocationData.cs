@@ -16,6 +16,13 @@ public class LocationData : ScriptableObject
     }
 
     [SerializeField]
+    private bool m_AllowDrawing = true;
+    public bool AllowDrawing
+    {
+        get { return m_AllowDrawing; }
+    }
+
+    [SerializeField]
     private List<InteractableObjectAndTransformTuple> m_InteractableObjects;
     public List<InteractableObjectAndTransformTuple> InteractableObjects
     {

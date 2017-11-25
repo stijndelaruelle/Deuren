@@ -58,6 +58,9 @@ namespace GestureRecognizer {
 		public GesturePattern gesture;
 		public Score score;
 
+        //Added: Stijn
+        public GestureData gestureData;
+
 		private static RecognitionResult empty = new RecognitionResult ();
 		public static RecognitionResult Empty { get { return empty; } }
 	}
