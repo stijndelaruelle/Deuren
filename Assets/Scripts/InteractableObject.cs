@@ -168,6 +168,12 @@ public class InteractableObject : PoolableObject, IPointerDownHandler, IBeginDra
         {
             InteractableObject otherInteractableObject = eventData.pointerDrag.GetComponent<InteractableObject>();
 
+            if (otherInteractableObject.Data.AllowDragging == false)
+                return;
+
+            if (this == otherInteractableObject)
+                return;
+
             if (otherInteractableObject != null)
                 DropInteract(otherInteractableObject);
         }

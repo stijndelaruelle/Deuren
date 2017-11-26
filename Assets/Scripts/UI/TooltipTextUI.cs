@@ -72,7 +72,8 @@ public class TooltipTextUI : MonoBehaviour
         m_Text.enabled = true;
 
         //Create a new sequence
-        m_RectTransform.position = new Vector3(position.x, position.y + m_Offset);
+        float offset = m_Offset * ((float)Screen.height / 1080.0f);
+        m_RectTransform.position = new Vector3(position.x, position.y + offset);
 
         if (m_CurrentSequence != null)
             m_CurrentSequence.Kill();
@@ -87,7 +88,7 @@ public class TooltipTextUI : MonoBehaviour
         m_CurrentSequence.AppendInterval(duration);
 
         //Move & fade out
-        m_CurrentSequence.Insert(duration + m_FadeTime, m_RectTransform.DOMoveY(position.y - m_Offset, m_FadeTime));
+        m_CurrentSequence.Insert(duration + m_FadeTime, m_RectTransform.DOMoveY(position.y - offset, m_FadeTime));
         m_CurrentSequence.Insert(duration + m_FadeTime, m_Text.DOFade(0.0f, m_FadeTime));
 
         //Callback
